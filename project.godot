@@ -11,5 +11,10 @@ config_version=5
 [application]
 
 config/name="wieze"
+run/main_scene="uid://c4347heiw7wsh"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
+
+[editor]
+
+movie_writer/disable_vsync=true
