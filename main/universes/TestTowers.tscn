@@ -1,8 +1,9 @@
-[gd_scene load_steps=11 format=4 uid="uid://fh74lwrby4qa"]
+[gd_scene load_steps=12 format=4 uid="uid://fh74lwrby4qa"]
 
 [ext_resource type="Texture2D" uid="uid://bgc7cao82d155" path="res://main/tower_placement/grass.png" id="1_ow1hb"]
 [ext_resource type="Script" uid="uid://b7f33cbllaceo" path="res://main/tower_placement/TowerPlacerTileMapLayer.gd" id="2_q8o7f"]
 [ext_resource type="Texture2D" uid="uid://b3kdvaf0aklr6" path="res://main/tower_placement/selected_cell.png" id="4_lrh7w"]
+[ext_resource type="PackedScene" uid="uid://buauxrayhrhsp" path="res://main/main_camera/MainCamera.tscn" id="4_ltdya"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lrh7w"]
 texture = ExtResource("1_ow1hb")
@@ -50,8 +51,6 @@ tile_set = SubResource("TileSet_q8o7f")
 tile_set = SubResource("TileSet_lrh7w")
 
 [node name="HighlightTileMapLayer" type="TileMapLayer" parent="TileMapController"]
-tile_map_data = PackedByteArray("AAAAAAEAAAAAAAAAAAD//wEAAAAAAAAAAAD//wAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=")
 tile_set = SubResource("TileSet_ow1hb")
 
-[node name="MainCamera" type="Camera2D" parent="."]
-zoom = Vector2(0.3, 0.3)
+[node name="MainCamera" parent="." instance=ExtResource("4_ltdya")]

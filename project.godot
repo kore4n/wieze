@@ -18,3 +18,13 @@ config/icon="res://icon.svg"
 [editor]
 
 movie_writer/disable_vsync=true
+
+[file_customization]
+
+folder_colors={
+"res://main/enemies/": "red",
+"res://main/main_camera/": "yellow",
+"res://main/tower_placement/": "teal",
+"res://main/towers/": "blue",
+"res://main/universes/": "purple"
+}
