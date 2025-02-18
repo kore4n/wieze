@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://bkbrlivs35o5e"]
+
+[ext_resource type="Texture2D" uid="uid://s55lk1vjesud" path="res://main/core_king/King_1.png" id="1_uo84y"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yuj4e"]
+size = Vector2(256, 256)
+
+[node name="CoreKing" type="Node2D"]
+
+[node name="Hurtbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
+shape = SubResource("RectangleShape2D_yuj4e")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_uo84y")
