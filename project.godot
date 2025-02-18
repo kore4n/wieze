@@ -15,6 +15,10 @@ run/main_scene="uid://c4347heiw7wsh"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+Globals="*res://main/core/globals.gd"
+
 [editor]
 
 movie_writer/disable_vsync=true

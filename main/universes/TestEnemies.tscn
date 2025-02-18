@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://bjhebd6k8whud"]
+
+[ext_resource type="PackedScene" uid="uid://c43w4y3q3fhh6" path="res://main/enemies/enemy.tscn" id="1_83owf"]
+[ext_resource type="PackedScene" uid="uid://by1c5st88khll" path="res://main/core/game_manager.tscn" id="1_h8710"]
+[ext_resource type="Script" uid="uid://cx0fb3pligmk3" path="res://main/addons/primitives2d/circle2d.gd" id="3_i3td3"]
+
+[node name="TestEnemies" type="Node2D"]
+
+[node name="GameManager" parent="." node_paths=PackedStringArray("core") instance=ExtResource("1_h8710")]
+core = NodePath("../Target")
+enemy = ExtResource("1_83owf")
+
+[node name="Target" type="Node2D" parent="."]
+script = ExtResource("3_i3td3")
+radius = 128.0
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.28, 0.28)
