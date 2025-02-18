@@ -22,6 +22,7 @@ movie_writer/disable_vsync=true
 [file_customization]
 
 folder_colors={
+"res://main/core_king/": "orange",
 "res://main/enemies/": "red",
 "res://main/main_camera/": "yellow",
 "res://main/tower_placement/": "teal",
