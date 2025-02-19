@@ -1,3 +1,7 @@
-[gd_scene format=3 uid="uid://c4347heiw7wsh"]
+[gd_scene load_steps=2 format=3 uid="uid://c4347heiw7wsh"]
+
+[ext_resource type="PackedScene" uid="uid://buauxrayhrhsp" path="res://main/main_camera/MainCamera.tscn" id="2_xur1t"]
 
 [node name="Main" type="Node2D"]
+
+[node name="MainCamera" parent="." instance=ExtResource("2_xur1t")]

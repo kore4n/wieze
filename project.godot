@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 Globals="*res://main/core/globals.gd"
 TowerSelectionSingleton="*res://main/tower_placement/tower_selection/TowerSelectionSingleton.gd"
+AudioManager="*res://main/audio/audio_manager.tscn"
 
 [editor]
 
