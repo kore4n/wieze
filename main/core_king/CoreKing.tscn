@@ -1,11 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://bkbrlivs35o5e"]
+[gd_scene load_steps=5 format=3 uid="uid://bkbrlivs35o5e"]
 
+[ext_resource type="Script" uid="uid://dteud44e24ki2" path="res://main/core_king/core_king.gd" id="1_ojta1"]
 [ext_resource type="Texture2D" uid="uid://s55lk1vjesud" path="res://main/core_king/King_1.png" id="1_uo84y"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yuj4e"]
 size = Vector2(256, 256)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_ojta1"]
+radius = 1000.0
+
 [node name="CoreKing" type="Node2D"]
+script = ExtResource("1_ojta1")
 
 [node name="Hurtbox" type="Area2D" parent="."]
 
@@ -14,3 +19,24 @@ shape = SubResource("RectangleShape2D_yuj4e")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_uo84y")
+
+[node name="TaxTimer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+
+[node name="HungerDrainTimer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[node name="EatTimer" type="Timer" parent="."]
+wait_time = 10.0
+one_shot = true
+
+[node name="ShootTimer" type="Timer" parent="."]
+autostart = true
+
+[node name="ShootArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ShootArea"]
+shape = SubResource("CircleShape2D_ojta1")
+disabled = true

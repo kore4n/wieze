@@ -1,7 +1,46 @@
-[gd_scene load_steps=2 format=3 uid="uid://c4347heiw7wsh"]
+[gd_scene load_steps=5 format=3 uid="uid://c4347heiw7wsh"]
 
+[ext_resource type="Script" uid="uid://clooiu0ie13el" path="res://main/core/hunger_bar.gd" id="2_0eocs"]
 [ext_resource type="PackedScene" uid="uid://buauxrayhrhsp" path="res://main/main_camera/MainCamera.tscn" id="2_xur1t"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y0fej"]
+bg_color = Color(0.252028, 0.252028, 0.252028, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xur1t"]
+bg_color = Color(0.694974, 0.578314, 0.436464, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 1)
 
 [node name="Main" type="Node2D"]
 
 [node name="MainCamera" parent="." instance=ExtResource("2_xur1t")]
+
+[node name="HUD" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="HUD"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HungerBar" type="ProgressBar" parent="HUD/Control"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 19.0
+offset_right = 263.0
+offset_bottom = 58.0
+theme_override_styles/background = SubResource("StyleBoxFlat_y0fej")
+theme_override_styles/fill = SubResource("StyleBoxFlat_xur1t")
+value = 50.0
+allow_greater = true
+script = ExtResource("2_0eocs")
