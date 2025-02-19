@@ -18,6 +18,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 Globals="*res://main/core/globals.gd"
+TowerSelectionSingleton="*res://main/tower_placement/tower_selection/TowerSelectionSingleton.gd"
 
 [editor]
 

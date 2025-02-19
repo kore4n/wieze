@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://cx5jqwqmus4a6"]
+
+[ext_resource type="Script" uid="uid://d3jdrdjhnu3m3" path="res://main/towers/tower.gd" id="1_i48bj"]
+[ext_resource type="Texture2D" uid="uid://tuhd6tlx540t" path="res://main/towers/coin_generator/Fruit_tree.png" id="1_mxvc3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0li2d"]
+size = Vector2(256, 256)
+
+[node name="CoinGeneratorTowerPrefab" type="Node2D"]
+script = ExtResource("1_i48bj")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_0li2d")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_mxvc3")
