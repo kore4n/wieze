@@ -1,4 +1,5 @@
 extends Node2D
+class_name CoreKing
 
 @onready var shoot_timer: Timer = $ShootTimer
 @onready var tax_timer: Timer = $TaxTimer
@@ -9,6 +10,7 @@ extends Node2D
 @export var base_damage: int = 1
 @export var shoot_speed: int = 1
 @export var hunger_drain_rate: int = 1
+@export var projectile: PackedScene
 
 const TAX_WAIT_TIME = 5
 const EAT_WAIT_TIME = 10
@@ -51,7 +53,12 @@ func _on_hunger_changed():
 
 func _shoot():
 	var target = _get_closest_target()
+	if not target: return
 	
+	var proj = projectile.instantiate() as KingProjectile
+	proj.damage = base_damage
+	add_child(proj)
+	proj.direction = (target.position - position).normalized()
 	
 func _get_closest_target():
 	var targets = shoot_area.get_overlapping_bodies()
@@ -72,3 +79,7 @@ func _tax():
 	
 func _eat():
 	pass
+
+func _on_hurtbox_body_entered(body: Node2D):
+	Globals.change_hunger(5)
+	body.queue_free()

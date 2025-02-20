@@ -2,6 +2,7 @@ extends Node2D
 
 @export var core: Node2D
 @export var enemy: PackedScene
+@export var spawn_radius: float = 1000
 
 var spawn_timer: Timer
 
@@ -18,7 +19,7 @@ func _spawn_enemy():
 	var node = enemy.instantiate() as Enemy
 	add_child(node)
 	node.target_object = core
-	_spawn_randomly_on_circle(node, 1000)
+	_spawn_randomly_on_circle(node, spawn_radius)
 
 
 func _spawn_randomly_on_circle(node: Node2D, radius: int):

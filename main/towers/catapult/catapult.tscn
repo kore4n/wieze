@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://cwpxw2vimgdbw"]
+
+[ext_resource type="PackedScene" uid="uid://dhe5a4tg1kf1y" path="res://main/towers/base_tower/Tower.tscn" id="1_04yxb"]
+[ext_resource type="Script" uid="uid://ctaygicbc1v3g" path="res://main/towers/catapult/catapult_shooter.gd" id="2_63p4c"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_04yxb"]
+size = Vector2(256, 256)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_f77dn"]
+radius = 1000.0
+
+[node name="Catapult" instance=ExtResource("1_04yxb")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HealthComponent" index="0"]
+shape = SubResource("RectangleShape2D_04yxb")
+
+[node name="CatapultShooter" type="Node2D" parent="." index="3"]
+script = ExtResource("2_63p4c")
+
+[node name="ShootArea" type="Area2D" parent="CatapultShooter" index="0"]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CatapultShooter/ShootArea" index="0"]
+shape = SubResource("CircleShape2D_f77dn")

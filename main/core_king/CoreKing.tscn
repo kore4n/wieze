@@ -1,18 +1,21 @@
-[gd_scene load_steps=5 format=3 uid="uid://bkbrlivs35o5e"]
+[gd_scene load_steps=6 format=3 uid="uid://bkbrlivs35o5e"]
 
 [ext_resource type="Script" uid="uid://dteud44e24ki2" path="res://main/core_king/core_king.gd" id="1_ojta1"]
 [ext_resource type="Texture2D" uid="uid://s55lk1vjesud" path="res://main/core_king/King_1.png" id="1_uo84y"]
+[ext_resource type="PackedScene" uid="uid://dusauddajqd84" path="res://main/core_king/king_projectile.tscn" id="2_lx3t0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yuj4e"]
 size = Vector2(256, 256)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ojta1"]
-radius = 1000.0
+radius = 750.0
 
 [node name="CoreKing" type="Node2D"]
 script = ExtResource("1_ojta1")
+projectile = ExtResource("2_lx3t0")
 
 [node name="Hurtbox" type="Area2D" parent="."]
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
 shape = SubResource("RectangleShape2D_yuj4e")
@@ -36,7 +39,10 @@ one_shot = true
 autostart = true
 
 [node name="ShootArea" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ShootArea"]
 shape = SubResource("CircleShape2D_ojta1")
-disabled = true
+
+[connection signal="body_entered" from="Hurtbox" to="." method="_on_hurtbox_body_entered"]

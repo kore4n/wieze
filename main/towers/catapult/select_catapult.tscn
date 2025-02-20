@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://cfxytrdwoqywy"]
+
+[ext_resource type="PackedScene" uid="uid://deqfopbxye3ty" path="res://main/tower_placement/tower_selection/SelectTowerIcon.tscn" id="1_elsgl"]
+[ext_resource type="PackedScene" uid="uid://cwpxw2vimgdbw" path="res://main/towers/catapult/catapult.tscn" id="2_6funl"]
+
+[node name="SelectCoinGenerateTowerIcon" instance=ExtResource("1_elsgl")]
+tower_to_spawn_prefab = ExtResource("2_6funl")
+
+[node name="TextureRect" parent="Panel" index="0"]
+expand_mode = 1

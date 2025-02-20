@@ -1,7 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://c4347heiw7wsh"]
+[gd_scene load_steps=7 format=3 uid="uid://c4347heiw7wsh"]
 
+[ext_resource type="PackedScene" uid="uid://by1c5st88khll" path="res://main/core/game_manager.tscn" id="1_1fyd6"]
 [ext_resource type="Script" uid="uid://clooiu0ie13el" path="res://main/core/hunger_bar.gd" id="2_0eocs"]
 [ext_resource type="PackedScene" uid="uid://buauxrayhrhsp" path="res://main/main_camera/MainCamera.tscn" id="2_xur1t"]
+[ext_resource type="PackedScene" uid="uid://bkbrlivs35o5e" path="res://main/core_king/CoreKing.tscn" id="5_ruamb"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y0fej"]
 bg_color = Color(0.252028, 0.252028, 0.252028, 1)
@@ -44,3 +46,8 @@ theme_override_styles/fill = SubResource("StyleBoxFlat_xur1t")
 value = 50.0
 allow_greater = true
 script = ExtResource("2_0eocs")
+
+[node name="CoreKing" parent="." instance=ExtResource("5_ruamb")]
+
+[node name="GameManager" parent="." node_paths=PackedStringArray("core") instance=ExtResource("1_1fyd6")]
+core = NodePath("../CoreKing")

@@ -1,22 +1,30 @@
-[gd_scene load_steps=4 format=3 uid="uid://c43w4y3q3fhh6"]
+[gd_scene load_steps=6 format=3 uid="uid://c43w4y3q3fhh6"]
 
 [ext_resource type="Script" uid="uid://cdmbhu07vde6n" path="res://main/enemies/enemy.gd" id="1_q7old"]
 [ext_resource type="Script" uid="uid://djrmd5fqhu4fj" path="res://main/addons/primitives2d/rectangle2d.gd" id="2_x8un0"]
+[ext_resource type="PackedScene" uid="uid://gbhvilbri8c" path="res://main/components/health_component.tscn" id="3_rnj73"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q7old"]
-size = Vector2(256, 256)
+size = Vector2(100, 100)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_emk4m"]
+size = Vector2(100, 100)
 
 [node name="Enemy" type="RigidBody2D"]
+collision_layer = 2
 gravity_scale = 0.0
 script = ExtResource("1_q7old")
-speed = 256
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_q7old")
 
 [node name="Node2D" type="Node2D" parent="."]
 script = ExtResource("2_x8un0")
-size = Vector2(256, 256)
+size = Vector2(100, 100)
 centered = true
 
-[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[node name="HealthComponent" parent="." instance=ExtResource("3_rnj73")]
+max_health = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HealthComponent"]
+shape = SubResource("RectangleShape2D_emk4m")
