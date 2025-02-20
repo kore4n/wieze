@@ -13,8 +13,8 @@ script = ExtResource("1_rqry2")
 
 [node name="Panel" type="ColorRect" parent="."]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 128.0
+offset_bottom = 128.0
 color = Color(0, 1, 1, 1)
 
 [node name="TextureRect" type="TextureRect" parent="Panel"]

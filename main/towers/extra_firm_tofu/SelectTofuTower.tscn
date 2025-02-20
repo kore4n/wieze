@@ -1,0 +1,12 @@
+[gd_scene load_steps=4 format=3 uid="uid://0ny8x0p51fv0"]
+
+[ext_resource type="PackedScene" uid="uid://deqfopbxye3ty" path="res://main/tower_placement/tower_selection/SelectTowerIcon.tscn" id="1_phybm"]
+[ext_resource type="PackedScene" uid="uid://csspx5fswc3xk" path="res://main/towers/extra_firm_tofu/TofuTower.tscn" id="2_i3gom"]
+[ext_resource type="Texture2D" uid="uid://bg74u6ysq2nqw" path="res://main/towers/extra_firm_tofu/tofu_block_256.jpg" id="2_wje4j"]
+
+[node name="SelectTofuTowerIcon" instance=ExtResource("1_phybm")]
+tower_to_spawn_prefab = ExtResource("2_i3gom")
+
+[node name="TextureRect" parent="Panel" index="0"]
+texture = ExtResource("2_wje4j")
+expand_mode = 1

@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://csspx5fswc3xk"]
+
+[ext_resource type="PackedScene" uid="uid://dhe5a4tg1kf1y" path="res://main/towers/base_tower/Tower.tscn" id="1_6n3og"]
+[ext_resource type="Texture2D" uid="uid://bg74u6ysq2nqw" path="res://main/towers/extra_firm_tofu/tofu_block_256.jpg" id="2_3sug8"]
+
+[node name="TofuTower" instance=ExtResource("1_6n3og")]
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_3sug8")

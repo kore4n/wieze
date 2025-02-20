@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://dhe5a4tg1kf1y"]
+
+[ext_resource type="Script" uid="uid://bwp86sfib2px1" path="res://main/towers/base_tower/tower.gd" id="1_1aihh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_it4ro"]
+size = Vector2(100, 100)
+
+[node name="Tower" type="Node2D"]
+script = ExtResource("1_1aihh")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="PlaceableArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlaceableArea"]
+position = Vector2(0, 80)
+shape = SubResource("RectangleShape2D_it4ro")
