@@ -7,7 +7,7 @@ const ZOOM_RATE: float = 8.0
 
 @onready var target_zoom: float = zoom.x
 
-func _unhandled_input(event: InputEvent) -> void:
+func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
 		if event.is_pressed():
 			if (event.button_index == MOUSE_BUTTON_WHEEL_UP):

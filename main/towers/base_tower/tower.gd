@@ -6,7 +6,7 @@ var is_placed = false
 @onready var health_component: HealthComponent = $HealthComponent
 @onready var tower_hurtbox: TowerHurtbox = $TowerHurtbox
 @onready var placeable_area: Area2D = $PlaceableArea
-@onready var tower_sprite: Sprite2D = $Sprite2D
+@onready var tower_sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var selectable_area_component: SelectableAreaComponent = $SelectableAreaComponent
 
 func _ready():

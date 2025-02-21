@@ -2,14 +2,14 @@
 
 [ext_resource type="Script" uid="uid://bwp86sfib2px1" path="res://main/towers/base_tower/tower.gd" id="1_1aihh"]
 [ext_resource type="PackedScene" uid="uid://gbhvilbri8c" path="res://main/components/health_component.tscn" id="2_ihehm"]
-[ext_resource type="Script" uid="uid://bko0gmbh4houb" path="res://main/towers/base_tower/tower_hurtbox.gd" id="3_n6o4s"]
-[ext_resource type="Script" uid="uid://da8m5tsrkacck" path="res://main/selectable_area_component.gd" id="4_10rwh"]
+[ext_resource type="Script" path="res://main/towers/base_tower/tower_hurtbox.gd" id="3_n6o4s"]
+[ext_resource type="Script" path="res://main/selectable_area_component.gd" id="4_10rwh"]
 
 [node name="Tower" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_1aihh")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 
 [node name="PlaceableArea" type="Area2D" parent="."]
 collision_layer = 4
