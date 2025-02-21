@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bp2svodlr6erc"]
+
+[ext_resource type="Script" uid="uid://da8m5tsrkacck" path="res://main/selectable_area_component.gd" id="1_7rtpm"]
+
+[node name="SelectableAreaComponent" type="Area2D"]
+collision_layer = 16
+collision_mask = 0
+script = ExtResource("1_7rtpm")

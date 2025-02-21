@@ -7,10 +7,12 @@ var is_placed = false
 @onready var tower_hurtbox: TowerHurtbox = $TowerHurtbox
 @onready var placeable_area: Area2D = $PlaceableArea
 @onready var tower_sprite: Sprite2D = $Sprite2D
+@onready var selectable_area_component: SelectableAreaComponent = $SelectableAreaComponent
 
 func _ready():
 	tower_hurtbox.take_damage.connect(_on_tower_damage)
 	health_component.death.connect(_on_tower_destroyed)
+	selectable_area_component.selection_toggled.connect(func(s): print(str(s) + " " + name))
 	tower_hurtbox.process_mode = Node.PROCESS_MODE_DISABLED
 
 func _process(_delta) -> void:

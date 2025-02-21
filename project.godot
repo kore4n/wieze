@@ -36,3 +36,7 @@ folder_colors={
 "res://main/towers/": "blue",
 "res://main/universes/": "purple"
 }
+
+[layer_names]
+
+2d_physics/layer_5="UI"
