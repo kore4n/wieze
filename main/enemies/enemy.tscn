@@ -13,6 +13,8 @@ size = Vector2(100, 100)
 [node name="Enemy" type="RigidBody2D"]
 collision_layer = 2
 gravity_scale = 0.0
+contact_monitor = true
+max_contacts_reported = 1
 script = ExtResource("1_q7old")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

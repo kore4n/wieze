@@ -1,7 +1,7 @@
 extends Node2D
 
 @export var generate_interval: int = 5
-@export var moeny_to_generate: int = 2
+@export var money_to_generate: int = 2
 
 func _ready():
 	var timer = Timer.new()
@@ -12,4 +12,4 @@ func _ready():
 	add_child(timer)
 	
 func _generate():
-	Globals.add_money(moeny_to_generate)
+	Globals.money += money_to_generate

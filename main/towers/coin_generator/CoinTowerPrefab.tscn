@@ -1,16 +1,26 @@
-[gd_scene load_steps=5 format=3 uid="uid://da4tepb2pqif3"]
+[gd_scene load_steps=7 format=3 uid="uid://da4tepb2pqif3"]
 
 [ext_resource type="PackedScene" uid="uid://dhe5a4tg1kf1y" path="res://main/towers/base_tower/Tower.tscn" id="1_doaen"]
 [ext_resource type="Texture2D" uid="uid://tuhd6tlx540t" path="res://main/towers/coin_generator/Fruit_tree.png" id="2_y8of5"]
 [ext_resource type="Script" uid="uid://xgde7fouc35r" path="res://main/towers/coin_generator/money_generator.gd" id="3_8jb18"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8jb18"]
+size = Vector2(200, 100)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y8of5"]
+size = Vector2(256, 256)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tk45d"]
 size = Vector2(256, 256)
 
 [node name="CoinTowerPrefab" instance=ExtResource("1_doaen")]
 
 [node name="Sprite2D" parent="." index="0"]
 texture = ExtResource("2_y8of5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlaceableArea" index="0"]
+position = Vector2(0, 78)
+shape = SubResource("RectangleShape2D_8jb18")
 
 [node name="HealthComponent" parent="." index="2"]
 max_health = 5
@@ -20,3 +30,6 @@ shape = SubResource("RectangleShape2D_y8of5")
 
 [node name="MoneyGenerator" type="Node2D" parent="." index="3"]
 script = ExtResource("3_8jb18")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TowerHurtbox" index="0"]
+shape = SubResource("RectangleShape2D_tk45d")

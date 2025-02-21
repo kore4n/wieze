@@ -2,9 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bwp86sfib2px1" path="res://main/towers/base_tower/tower.gd" id="1_1aihh"]
 [ext_resource type="PackedScene" uid="uid://gbhvilbri8c" path="res://main/components/health_component.tscn" id="2_ihehm"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_it4ro"]
-size = Vector2(256, 100)
+[ext_resource type="Script" uid="uid://bko0gmbh4houb" path="res://main/towers/base_tower/tower_hurtbox.gd" id="3_n6o4s"]
 
 [node name="Tower" type="Node2D"]
 y_sort_enabled = true
@@ -16,9 +14,10 @@ script = ExtResource("1_1aihh")
 collision_layer = 4
 collision_mask = 4
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PlaceableArea"]
-position = Vector2(0, 80)
-shape = SubResource("RectangleShape2D_it4ro")
-
 [node name="HealthComponent" parent="." instance=ExtResource("2_ihehm")]
 collision_layer = 1
+collision_mask = 2
+
+[node name="TowerHurtbox" type="StaticBody2D" parent="."]
+collision_mask = 2
+script = ExtResource("3_n6o4s")

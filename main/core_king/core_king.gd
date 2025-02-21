@@ -75,7 +75,7 @@ func _get_closest_target():
 	return target
 	
 func _tax():
-	Globals.add_money(-roundi(Globals.spawn_rate * TAX_WAIT_TIME * 1.5))
+	Globals.money += -roundi(Globals.spawn_rate * TAX_WAIT_TIME * 1.5)
 	
 func _eat():
 	pass
