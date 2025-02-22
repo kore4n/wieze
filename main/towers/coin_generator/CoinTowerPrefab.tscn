@@ -1,9 +1,9 @@
 [gd_scene load_steps=10 format=3 uid="uid://da4tepb2pqif3"]
 
 [ext_resource type="PackedScene" uid="uid://dhe5a4tg1kf1y" path="res://main/towers/base_tower/Tower.tscn" id="1_doaen"]
-[ext_resource type="Texture2D" uid="uid://cai6rqcbbja7k" path="res://main/towers/coin_generator/Orchard_1.png" id="2_tk45d"]
+[ext_resource type="Texture2D" uid="uid://cgvvkddhqohx4" path="res://main/towers/coin_generator/Orchard_1.png" id="2_tk45d"]
 [ext_resource type="Script" uid="uid://xgde7fouc35r" path="res://main/towers/coin_generator/money_generator.gd" id="3_8jb18"]
-[ext_resource type="Texture2D" uid="uid://dctn6sabo1iot" path="res://main/towers/coin_generator/Orchard_2.png" id="3_ey2sw"]
+[ext_resource type="Texture2D" uid="uid://di671q4lkhi3c" path="res://main/towers/coin_generator/Orchard_2.png" id="3_ey2sw"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_tk45d"]
 animations = [{
@@ -35,6 +35,7 @@ size = Vector2(256, 256)
 
 [node name="AnimatedSprite2D" parent="." index="0"]
 sprite_frames = SubResource("SpriteFrames_tk45d")
+frame_progress = 0.604962
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlaceableArea" index="0"]
 position = Vector2(0, 78)
