@@ -29,6 +29,7 @@ font_size = 30
 [node name="Main" type="Node2D"]
 
 [node name="MainCamera" parent="." instance=ExtResource("2_xur1t")]
+zoom = Vector2(0.5, 0.5)
 
 [node name="CoreKing" parent="." instance=ExtResource("5_ruamb")]
 
