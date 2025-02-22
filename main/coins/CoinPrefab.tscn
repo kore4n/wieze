@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://cdecvhqhgmmrq"]
+
+[ext_resource type="Texture2D" uid="uid://phj17s661ir1" path="res://main/coins/Orange_1.png" id="1_pwcld"]
+[ext_resource type="Texture2D" uid="uid://4f4tl3hr043" path="res://main/coins/Orange_2.png" id="2_cx8tx"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jhin1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_pwcld")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_cx8tx")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="CoinPrefab" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_jhin1")
