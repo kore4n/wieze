@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://dhe5a4tg1kf1y"]
+[gd_scene load_steps=6 format=3 uid="uid://dhe5a4tg1kf1y"]
 
 [ext_resource type="Script" uid="uid://bwp86sfib2px1" path="res://main/towers/base_tower/tower.gd" id="1_1aihh"]
 [ext_resource type="PackedScene" uid="uid://gbhvilbri8c" path="res://main/components/health_component.tscn" id="2_ihehm"]
 [ext_resource type="Script" uid="uid://bko0gmbh4houb" path="res://main/towers/base_tower/tower_hurtbox.gd" id="3_n6o4s"]
 [ext_resource type="Script" uid="uid://da8m5tsrkacck" path="res://main/selectable_area_component.gd" id="4_10rwh"]
+[ext_resource type="Script" uid="uid://djrmd5fqhu4fj" path="res://main/addons/primitives2d/rectangle2d.gd" id="5_12yx1"]
 
 [node name="Tower" type="Node2D"]
 y_sort_enabled = true
@@ -25,3 +26,32 @@ script = ExtResource("3_n6o4s")
 
 [node name="SelectableAreaComponent" type="Area2D" parent="."]
 script = ExtResource("4_10rwh")
+
+[node name="Highlight" type="Node2D" parent="."]
+script = ExtResource("5_12yx1")
+color = Color(1, 1, 0.470588, 0.678431)
+size = Vector2(256, 256)
+filled = false
+line_width = 4.0
+centered = true
+metadata/_custom_type_script = ExtResource("5_12yx1")
+
+[node name="Button" type="Button" parent="Highlight"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -131.0
+offset_top = -235.0
+offset_right = 132.0
+offset_bottom = -163.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 32
+text = "Feed to king!"
+icon_alignment = 1
+
+[connection signal="selection_toggled" from="SelectableAreaComponent" to="." method="_on_selectable_area_component_selection_toggled"]

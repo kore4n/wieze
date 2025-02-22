@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://da4tepb2pqif3"]
+[gd_scene load_steps=9 format=3 uid="uid://da4tepb2pqif3"]
 
 [ext_resource type="PackedScene" uid="uid://dhe5a4tg1kf1y" path="res://main/towers/base_tower/Tower.tscn" id="1_doaen"]
 [ext_resource type="Texture2D" uid="uid://cgvvkddhqohx4" path="res://main/towers/coin_generator/Orchard_1.png" id="2_tk45d"]
@@ -20,16 +20,13 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8jb18"]
-size = Vector2(200, 100)
+size = Vector2(115, 100)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y8of5"]
-size = Vector2(256, 256)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_tk45d"]
-size = Vector2(256, 256)
+size = Vector2(203, 213)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ey2sw"]
-size = Vector2(256, 256)
+size = Vector2(256, 238)
 
 [node name="CoinTowerPrefab" instance=ExtResource("1_doaen")]
 
@@ -38,20 +35,23 @@ sprite_frames = SubResource("SpriteFrames_tk45d")
 frame_progress = 0.604962
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlaceableArea" index="0"]
-position = Vector2(0, 78)
+position = Vector2(0, 47)
 shape = SubResource("RectangleShape2D_8jb18")
 
 [node name="HealthComponent" parent="." index="2"]
 max_health = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HealthComponent" index="0"]
+position = Vector2(0, -9)
 shape = SubResource("RectangleShape2D_y8of5")
 
 [node name="MoneyGenerator" type="Node2D" parent="." index="3"]
 script = ExtResource("3_8jb18")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TowerHurtbox" index="0"]
-shape = SubResource("RectangleShape2D_tk45d")
+position = Vector2(0, -9)
+shape = SubResource("RectangleShape2D_y8of5")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SelectableAreaComponent" index="0"]
+position = Vector2(0, -9)
 shape = SubResource("RectangleShape2D_ey2sw")

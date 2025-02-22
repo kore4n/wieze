@@ -13,6 +13,7 @@ func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and not event.pressed and draggable_tower_to_place != null:
 		if draggable_tower_to_place.can_be_placed():
 			draggable_tower_to_place.is_placed = true
+			Globals.track_tower(draggable_tower_to_place)
 		else:
 			draggable_tower_to_place.queue_free()
 		draggable_tower_to_place = null

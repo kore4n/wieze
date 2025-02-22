@@ -3,18 +3,23 @@ extends Node2D
 
 var is_placed = false
 
+@export var tower_type: Globals.TowerType
+
+@onready var highlight: Rectangle2D = $Highlight
 @onready var health_component: HealthComponent = $HealthComponent
 @onready var tower_hurtbox: TowerHurtbox = $TowerHurtbox
 @onready var placeable_area: Area2D = $PlaceableArea
 @onready var tower_sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var selectable_area_component: SelectableAreaComponent = $SelectableAreaComponent
+@onready var feed_button: Button = $Highlight/Button
 
 func _ready():
 	tower_sprite.play()
 	tower_hurtbox.take_damage.connect(_on_tower_damage)
-	health_component.death.connect(_on_tower_destroyed)
-	selectable_area_component.selection_toggled.connect(func(s): print(str(s) + " " + name))
+	health_component.death.connect(_on_death)
 	tower_hurtbox.process_mode = Node.PROCESS_MODE_DISABLED
+	highlight.visible = false
+	feed_button.pressed.connect(_feed_to_king)
 
 func _process(_delta) -> void:
 	if is_placed == false:
@@ -33,5 +38,15 @@ func can_be_placed() -> bool:
 func _on_tower_damage(damage: int):
 	health_component.change_health(-damage)
 
-func _on_tower_destroyed():
+func _on_death():
+	Globals.break_tower(self)
+
+func destroy():
 	queue_free()
+
+func _on_selectable_area_component_selection_toggled(selection):
+	highlight.visible = selection
+	
+func _feed_to_king():
+	EventBus.tower_sacrifice.emit(tower_type, self)
+	

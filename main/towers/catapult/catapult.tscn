@@ -10,6 +10,10 @@ size = Vector2(256, 256)
 radius = 1000.0
 
 [node name="Catapult" instance=ExtResource("1_04yxb")]
+tower_type = 2
+
+[node name="HealthComponent" parent="." index="2"]
+max_health = 5.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HealthComponent" index="0"]
 shape = SubResource("RectangleShape2D_04yxb")

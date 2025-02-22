@@ -12,7 +12,6 @@ radius = 750.0
 
 [node name="CoreKing" type="Node2D"]
 script = ExtResource("1_ojta1")
-hunger_drain_rate = 10
 projectile = ExtResource("2_lx3t0")
 
 [node name="Hurtbox" type="Area2D" parent="."]
@@ -25,12 +24,16 @@ shape = SubResource("RectangleShape2D_yuj4e")
 texture = ExtResource("1_uo84y")
 
 [node name="TaxTimer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
 
 [node name="HungerDrainTimer" type="Timer" parent="."]
 wait_time = 2.0
 autostart = true
 
 [node name="EatTimer" type="Timer" parent="."]
+wait_time = 10.0
+one_shot = true
 
 [node name="ShootTimer" type="Timer" parent="."]
 autostart = true
