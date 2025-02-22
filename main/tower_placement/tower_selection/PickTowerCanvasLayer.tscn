@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://c7vcviakru0n7"]
+[gd_scene load_steps=4 format=3 uid="uid://c7vcviakru0n7"]
 
 [ext_resource type="PackedScene" uid="uid://1palk8cgpmfc" path="res://main/towers/coin_generator/SelectCoinGenerateTower.tscn" id="1_ur6be"]
 [ext_resource type="PackedScene" uid="uid://0ny8x0p51fv0" path="res://main/towers/extra_firm_tofu/SelectTofuTower.tscn" id="2_ijb75"]
+[ext_resource type="PackedScene" uid="uid://cma4o738il83c" path="res://main/towers/catapult/SelectAppleCatapultTowerIcon.tscn" id="2_k8goo"]
 
 [node name="PickTowerCanvasLayer" type="CanvasLayer"]
 
@@ -30,5 +31,8 @@ theme_override_constants/separation = -145
 [node name="SelectTofuTowerIcon" parent="Control/HBoxContainer" instance=ExtResource("2_ijb75")]
 layout_mode = 2
 
-[node name="SelectTowerIcon" parent="Control/HBoxContainer" instance=ExtResource("1_ur6be")]
+[node name="SelectAppleCatapultTowerIcon" parent="Control/HBoxContainer" instance=ExtResource("2_k8goo")]
+layout_mode = 2
+
+[node name="SelectCoinGenerateTowerIcon" parent="Control/HBoxContainer" instance=ExtResource("1_ur6be")]
 layout_mode = 2

@@ -1,0 +1,18 @@
+[gd_resource type="SpriteFrames" load_steps=3 format=3 uid="uid://baxwigj11et7a"]
+
+[ext_resource type="Texture2D" uid="uid://dtlhblfxaeed8" path="res://main/towers/catapult/Apple_idle_1.png" id="1_t0dts"]
+[ext_resource type="Texture2D" uid="uid://isahfjma0jrl" path="res://main/towers/catapult/Apple_idle_2.png" id="2_fwyx4"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_t0dts")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_fwyx4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
