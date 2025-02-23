@@ -6,6 +6,7 @@ class_name CoreKing
 @onready var eat_timer: Timer = $EatTimer
 @onready var hunger_drain_timer: Timer = $HungerDrainTimer
 @onready var shoot_area: Area2D = $ShootArea
+@onready var animated_sprite: AnimatedSprite2D =  $AnimatedSprite2D
 
 @export var base_damage: int = 1
 @export var shoot_speed: float = 1
@@ -28,6 +29,7 @@ func _ready():
 	Globals.hunger = Globals.BASE_HUNGER
 	Globals.hunger_changed.connect(_on_hunger_changed)
 	state = HungerState.Happy
+	animated_sprite.play()
 	
 	tax_timer.wait_time = TAX_WAIT_TIME
 	eat_timer.wait_time = EAT_WAIT_TIME
