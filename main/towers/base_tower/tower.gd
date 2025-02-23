@@ -4,6 +4,7 @@ extends Node2D
 var is_placed = false
 
 @export var tower_type: Globals.TowerType
+@export var cost: int
 
 @onready var highlight: Rectangle2D = $Highlight
 @onready var health_component: HealthComponent = $HealthComponent
@@ -33,7 +34,7 @@ func _process(_delta) -> void:
 		tower_hurtbox.process_mode = Node.PROCESS_MODE_INHERIT
 
 func can_be_placed() -> bool:
-	return placeable_area.get_overlapping_areas().size() == 0 and health_component.get_overlapping_bodies().size() == 0
+	return placeable_area.get_overlapping_areas().size() == 0 and health_component.get_overlapping_bodies().size() == 0 and Globals.money >= cost
 
 func _on_tower_damage(damage: int):
 	health_component.change_health(-damage)

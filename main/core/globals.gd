@@ -4,13 +4,16 @@ extends Node
 # Game
 ##########################
 
+signal pause_spawning
+signal resume_spawning
+
 enum TowerType {
 	Orchard,
 	Tofu,
 	Catapult
 }
 
-var spawn_rate: int = 5
+var spawn_rate: float = 5
 
 const DEATH_HUNGER = 300
 const BASE_HUNGER = 100
@@ -30,13 +33,16 @@ func _set_hunger(value):
 
 var money: int = 0:
 	set(value):
-		money_changed.emit()
 		money = max(value, 0)
+		money_changed.emit()
 signal money_changed
 
 var global_towers: Array[Tower] = []
 
-func track_tower(tower: Tower):
+func place_tower(tower: Tower):
+	money -= tower.cost
+	
+	tower.is_placed = true
 	global_towers.append(tower)
 	
 func break_tower(tower: Tower):

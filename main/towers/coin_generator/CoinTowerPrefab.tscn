@@ -29,6 +29,7 @@ size = Vector2(203, 213)
 size = Vector2(256, 238)
 
 [node name="CoinTowerPrefab" instance=ExtResource("1_doaen")]
+cost = 50
 
 [node name="AnimatedSprite2D" parent="." index="0"]
 sprite_frames = SubResource("SpriteFrames_tk45d")
@@ -47,6 +48,7 @@ shape = SubResource("RectangleShape2D_y8of5")
 
 [node name="MoneyGenerator" type="Node2D" parent="." index="3"]
 script = ExtResource("3_8jb18")
+money_to_generate = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TowerHurtbox" index="0"]
 position = Vector2(0, -9)

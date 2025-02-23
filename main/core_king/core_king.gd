@@ -86,7 +86,7 @@ func _get_closest_target():
 	return target
 	
 func _tax():
-	Globals.money -= roundi(Globals.spawn_rate * TAX_WAIT_TIME)
+	Globals.money -= roundi(Globals.spawn_rate * TAX_WAIT_TIME / 2)
 	
 func _eat():
 	Globals.break_n_towers(Globals.global_towers.size() / 3)
@@ -100,8 +100,8 @@ func _buff_king(tower_type: Globals.TowerType, tower: Tower):
 		Globals.TowerType.Orchard:
 			fire_speed_multiplier += 0.2
 		Globals.TowerType.Tofu:
-			damage_multiplier += 0.2
-		Globals.TowerType.Catapult:
 			knockback_force += 20
+		Globals.TowerType.Catapult:
+			damage_multiplier += 0.2
 			
 	Globals.break_tower(tower)

@@ -20,16 +20,16 @@ func _shoot():
 	var proj = projectile_scene.instantiate()
 	proj.damage = damage
 	add_child(proj)
-	proj.direction = (target.position - position).normalized()
+	proj.direction = (target.position - global_position).normalized()
 	
 func _get_closest_target():
 	var targets = shoot_area.get_overlapping_bodies()
 	if len(targets) == 0: return
 	
 	var target = targets[0]
-	var dist_squared = (position - target.position).dot(position - target.position)
+	var dist_squared = (global_position - target.position).dot(global_position - target.position)
 	for t in targets:
-		var d = position - t.position
+		var d = global_position - t.position
 		d = d.dot(d)
 		if d < dist_squared:
 			target = t
