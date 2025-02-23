@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://cwpxw2vimgdbw"]
+[gd_scene load_steps=10 format=3 uid="uid://cwpxw2vimgdbw"]
 
 [ext_resource type="PackedScene" uid="uid://dhe5a4tg1kf1y" path="res://main/towers/base_tower/Tower.tscn" id="1_04yxb"]
 [ext_resource type="Script" uid="uid://ctaygicbc1v3g" path="res://main/towers/catapult/catapult_shooter.gd" id="2_63p4c"]
 [ext_resource type="SpriteFrames" uid="uid://baxwigj11et7a" path="res://main/towers/catapult/catapult_idle_frames.tres" id="2_f77dn"]
+[ext_resource type="Script" uid="uid://bt53b7gf0f1ts" path="res://main/towers/catapult/catapult.gd" id="2_psfab"]
 [ext_resource type="PackedScene" uid="uid://bavwp1ddhv4rp" path="res://main/towers/catapult/apple_projectile.tscn" id="4_wyrkg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wyrkg"]
@@ -18,6 +19,7 @@ radius = 1000.0
 size = Vector2(256, 256)
 
 [node name="Catapult" instance=ExtResource("1_04yxb")]
+script = ExtResource("2_psfab")
 tower_type = 2
 cost = 30
 

@@ -42,7 +42,7 @@ var global_towers: Array[Tower] = []
 func place_tower(tower: Tower):
 	money -= tower.cost
 	
-	tower.is_placed = true
+	tower.place()
 	global_towers.append(tower)
 	
 func break_tower(tower: Tower):

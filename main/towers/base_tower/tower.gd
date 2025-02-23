@@ -33,6 +33,9 @@ func _process(_delta) -> void:
 	else:
 		tower_hurtbox.process_mode = Node.PROCESS_MODE_INHERIT
 
+func place():
+	is_placed = true
+
 func can_be_placed() -> bool:
 	return placeable_area.get_overlapping_areas().size() == 0 and health_component.get_overlapping_bodies().size() == 0 and Globals.money >= cost
 
@@ -50,4 +53,3 @@ func _on_selectable_area_component_selection_toggled(selection):
 	
 func _feed_to_king():
 	EventBus.tower_sacrifice.emit(tower_type, self)
-	

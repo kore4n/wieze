@@ -23,5 +23,5 @@ func _make_exclusive():
 	get_tree().call_group("selected", "set_selected", false)
 	
 func _input_event(viewport, event, shape_idx):
-	if event is InputEventMouseButton and event.is_pressed():
+	if event is InputEventMouseButton and event.is_pressed() and event.button_index == MOUSE_BUTTON_LEFT:
 		set_selected(not selected)
