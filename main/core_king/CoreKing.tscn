@@ -1,9 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://bkbrlivs35o5e"]
+[gd_scene load_steps=11 format=3 uid="uid://bkbrlivs35o5e"]
 
 [ext_resource type="Script" uid="uid://dteud44e24ki2" path="res://main/core_king/core_king.gd" id="1_ojta1"]
 [ext_resource type="Texture2D" uid="uid://s55lk1vjesud" path="res://main/core_king/King_1.png" id="1_uo84y"]
 [ext_resource type="PackedScene" uid="uid://dusauddajqd84" path="res://main/core_king/king_projectile.tscn" id="2_lx3t0"]
 [ext_resource type="AudioStream" uid="uid://cd8i52xay2i3w" path="res://main/audio/sfx/big-crunch-2-90138.mp3" id="3_2w7cp"]
+[ext_resource type="Texture2D" uid="uid://gqi3p3q5jl76" path="res://main/core_king/Thin_king_1.png" id="4_ya6lr"]
+[ext_resource type="Texture2D" uid="uid://cs4lqbshmp20h" path="res://main/core_king/Thin_king_2.png" id="5_m2x10"]
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_ya6lr"]
 random_pitch = 1.1
@@ -12,6 +14,20 @@ stream_0/stream = ExtResource("3_2w7cp")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yuj4e"]
 size = Vector2(256, 256)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_m2x10"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_ya6lr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_m2x10")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ojta1"]
 radius = 750.0
@@ -31,6 +47,10 @@ shape = SubResource("RectangleShape2D_yuj4e")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_uo84y")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_m2x10")
+frame_progress = 0.0917146
 
 [node name="TaxTimer" type="Timer" parent="."]
 
