@@ -1,8 +1,14 @@
-[gd_scene load_steps=6 format=3 uid="uid://bkbrlivs35o5e"]
+[gd_scene load_steps=8 format=3 uid="uid://bkbrlivs35o5e"]
 
 [ext_resource type="Script" uid="uid://dteud44e24ki2" path="res://main/core_king/core_king.gd" id="1_ojta1"]
 [ext_resource type="Texture2D" uid="uid://s55lk1vjesud" path="res://main/core_king/King_1.png" id="1_uo84y"]
 [ext_resource type="PackedScene" uid="uid://dusauddajqd84" path="res://main/core_king/king_projectile.tscn" id="2_lx3t0"]
+[ext_resource type="AudioStream" uid="uid://cd8i52xay2i3w" path="res://main/audio/sfx/big-crunch-2-90138.mp3" id="3_2w7cp"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_ya6lr"]
+random_pitch = 1.1
+streams_count = 1
+stream_0/stream = ExtResource("3_2w7cp")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yuj4e"]
 size = Vector2(256, 256)
@@ -14,6 +20,7 @@ radius = 750.0
 script = ExtResource("1_ojta1")
 shoot_speed = 2.0
 projectile = ExtResource("2_lx3t0")
+eat_sound = SubResource("AudioStreamRandomizer_ya6lr")
 
 [node name="Hurtbox" type="Area2D" parent="."]
 collision_layer = 5

@@ -11,6 +11,7 @@ class_name CoreKing
 @export var shoot_speed: float = 1
 @export var hunger_drain_rate: int = 1
 @export var projectile: PackedScene
+@export var eat_sound: AudioStream
 
 var fire_speed_multiplier: float = 1
 var damage_multiplier: float = 1
@@ -91,6 +92,7 @@ func _tax():
 	
 func _eat():
 	Globals.break_n_towers(Globals.global_towers.size() / 3)
+	AudioManager.play_sound(eat_sound)
 
 func _on_hurtbox_body_entered(body: Node2D):
 	Globals.hunger += 10

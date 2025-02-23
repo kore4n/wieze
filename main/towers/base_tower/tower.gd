@@ -5,6 +5,7 @@ var is_placed = false
 
 @export var tower_type: Globals.TowerType
 @export var cost: int
+@export var eat_sound: AudioStream
 
 @onready var highlight: Rectangle2D = $Highlight
 @onready var health_component: HealthComponent = $HealthComponent
@@ -53,3 +54,4 @@ func _on_selectable_area_component_selection_toggled(selection):
 	
 func _feed_to_king():
 	EventBus.tower_sacrifice.emit(tower_type, self)
+	AudioManager.play_sound(eat_sound)

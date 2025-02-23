@@ -4,6 +4,8 @@ extends Node
 # Game
 ##########################
 
+var place_sound: AudioStream = preload("res://main/audio/sfx/landing-on-grass-40650.mp3")
+
 signal pause_spawning
 signal resume_spawning
 
@@ -41,7 +43,7 @@ var global_towers: Array[Tower] = []
 
 func place_tower(tower: Tower):
 	money -= tower.cost
-	
+	AudioManager.play_sound(place_sound, tower.position)
 	tower.place()
 	global_towers.append(tower)
 	
