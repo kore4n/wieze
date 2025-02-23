@@ -13,7 +13,6 @@ func _ready():
 	add_child(timer)
 	timer.timeout.connect(func (): queue_free())
 	timer.start(max_lifetime)
-	look_at(direction)
 
 func _process(delta):
 	position += direction * delta * speed

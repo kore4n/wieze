@@ -10,14 +10,14 @@ func _shoot_loop():
 	await get_tree().create_timer(shoot_interval).timeout
 	var target = _get_closest_target()
 	if target:
-		var proj = projectile_scene.instantiate()
+		var proj: AppleProjectile = projectile_scene.instantiate()
 		proj.damage = damage
 		add_child(proj)
 		proj.direction = (target.position - global_position).normalized()
-	
+		proj.look_at(target.global_position)
 	_shoot_loop()
 	
-func _get_closest_target():
+func _get_closest_target() -> Node2D:
 	var targets = shoot_area.get_overlapping_bodies()
 	if len(targets) == 0: return
 	
