@@ -2,11 +2,11 @@
 
 [ext_resource type="PackedScene" uid="uid://deqfopbxye3ty" path="res://main/tower_placement/tower_selection/SelectTowerIcon.tscn" id="1_jpvh1"]
 [ext_resource type="PackedScene" uid="uid://cwpxw2vimgdbw" path="res://main/towers/catapult/catapult.tscn" id="2_2fecx"]
-[ext_resource type="Texture2D" uid="uid://cncsiqtedceru" path="res://main/towers/catapult/Apple_seed_1.png" id="2_u7b63"]
+[ext_resource type="Texture2D" uid="uid://dtlhblfxaeed8" path="res://main/towers/catapult/Apple_idle_1.png" id="3_2fecx"]
 
 [node name="SelectAppleCatapultTowerIcon" instance=ExtResource("1_jpvh1")]
 tower_to_spawn_prefab = ExtResource("2_2fecx")
 
 [node name="TextureRect" parent="Panel" index="0"]
-texture = ExtResource("2_u7b63")
+texture = ExtResource("3_2fecx")
 expand_mode = 1

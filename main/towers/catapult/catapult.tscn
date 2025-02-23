@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://cwpxw2vimgdbw"]
+[gd_scene load_steps=11 format=3 uid="uid://cwpxw2vimgdbw"]
 
 [ext_resource type="PackedScene" uid="uid://dhe5a4tg1kf1y" path="res://main/towers/base_tower/Tower.tscn" id="1_04yxb"]
 [ext_resource type="Script" uid="uid://ctaygicbc1v3g" path="res://main/towers/catapult/catapult_shooter.gd" id="2_63p4c"]
 [ext_resource type="SpriteFrames" uid="uid://baxwigj11et7a" path="res://main/towers/catapult/catapult_idle_frames.tres" id="2_f77dn"]
-[ext_resource type="Script" uid="uid://bt53b7gf0f1ts" path="res://main/towers/catapult/catapult.gd" id="2_psfab"]
+[ext_resource type="Script" path="res://main/towers/catapult/catapult.gd" id="2_psfab"]
 [ext_resource type="PackedScene" uid="uid://bavwp1ddhv4rp" path="res://main/towers/catapult/apple_projectile.tscn" id="4_wyrkg"]
+[ext_resource type="SpriteFrames" uid="uid://bvw51e8q22avx" path="res://main/towers/catapult/catapult_shooting_frames.tres" id="6_s6q4f"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wyrkg"]
 size = Vector2(154, 58)
@@ -41,6 +42,8 @@ shape = SubResource("RectangleShape2D_04yxb")
 [node name="CatapultShooter" type="Node2D" parent="." index="3"]
 script = ExtResource("2_63p4c")
 projectile_scene = ExtResource("4_wyrkg")
+apple_idle_frames = ExtResource("2_f77dn")
+apple_shoot_frames = ExtResource("6_s6q4f")
 
 [node name="ShootArea" type="Area2D" parent="CatapultShooter" index="0"]
 collision_layer = 0

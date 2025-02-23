@@ -63,6 +63,7 @@ func _shoot():
 	var proj = projectile.instantiate() as KingProjectile
 	proj.damage = base_damage * damage_multiplier
 	proj.knockback_force = knockback_force
+	proj.look_at(target.global_position)
 	add_child(proj)
 	proj.direction = (target.position - position).normalized()
 	
