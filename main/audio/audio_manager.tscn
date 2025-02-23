@@ -10,4 +10,6 @@ script = ExtResource("1_u1y1g")
 stream = ExtResource("2_rolak")
 volume_db = -20.0
 autoplay = true
+max_distance = 4096.0
+attenuation = 1e-05
 bus = &"Music"

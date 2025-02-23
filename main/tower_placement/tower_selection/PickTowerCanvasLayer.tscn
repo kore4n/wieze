@@ -8,26 +8,23 @@
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
-anchors_preset = 7
-anchor_left = 0.5
+anchors_preset = 3
+anchor_left = 1.0
 anchor_top = 1.0
-anchor_right = 0.5
+anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 424.0
-offset_top = -98.0
-offset_right = 424.0
-offset_bottom = -98.0
-grow_horizontal = 2
+grow_horizontal = 0
 grow_vertical = 0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Control"]
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
-offset_left = -4.0
-offset_right = 4.0
+offset_left = -168.0
+offset_top = -170.0
+offset_right = -160.0
+offset_bottom = -170.0
 grow_horizontal = 2
-scale = Vector2(0.5, 0.5)
 theme_override_constants/separation = -145
 
 [node name="SelectTofuTowerIcon" parent="Control/HBoxContainer" instance=ExtResource("2_ijb75")]

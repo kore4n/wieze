@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://c4347heiw7wsh"]
+[gd_scene load_steps=12 format=3 uid="uid://c4347heiw7wsh"]
 
 [ext_resource type="PackedScene" uid="uid://by1c5st88khll" path="res://main/core/game_manager.tscn" id="1_1fyd6"]
 [ext_resource type="Script" uid="uid://clooiu0ie13el" path="res://main/core/hunger_bar.gd" id="2_0eocs"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://c7vcviakru0n7" path="res://main/tower_placement/tower_selection/PickTowerCanvasLayer.tscn" id="5_1fyd6"]
 [ext_resource type="Script" uid="uid://cdcsgpjft8rxf" path="res://main/ui/money_label.gd" id="5_oc406"]
 [ext_resource type="PackedScene" uid="uid://bkbrlivs35o5e" path="res://main/core_king/CoreKing.tscn" id="5_ruamb"]
+[ext_resource type="Texture2D" uid="uid://phj17s661ir1" path="res://main/coins/Orange_1.png" id="7_21qrk"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y0fej"]
 bg_color = Color(0.252028, 0.252028, 0.252028, 1)
@@ -47,36 +48,52 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 1.0
+offset_right = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
 [node name="HungerBar" type="ProgressBar" parent="HUD/Control"]
 layout_mode = 0
-offset_left = 16.0
-offset_top = 19.0
-offset_right = 263.0
-offset_bottom = 58.0
+offset_left = 17.0
+offset_top = 11.0
+offset_right = 264.0
+offset_bottom = 50.0
 theme_override_styles/background = SubResource("StyleBoxFlat_y0fej")
 theme_override_styles/fill = SubResource("StyleBoxFlat_xur1t")
 value = 50.0
 allow_greater = true
 script = ExtResource("2_0eocs")
 
+[node name="Label3" type="Label" parent="HUD/Control/HungerBar"]
+layout_mode = 1
+offset_left = 40.0
+offset_top = 7.0
+offset_right = 118.0
+offset_bottom = 33.0
+theme_override_font_sizes/font_size = 16
+text = "Hunger:"
+
 [node name="MoneyLabel" type="Label" parent="HUD/Control"]
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -133.0
-offset_top = 20.0
-offset_right = -20.0
-offset_bottom = 63.0
+offset_left = -185.0
+offset_top = 21.0
+offset_right = -72.0
+offset_bottom = 64.0
 grow_horizontal = 0
 text = "Money"
 label_settings = SubResource("LabelSettings_ruamb")
 horizontal_alignment = 2
 script = ExtResource("5_oc406")
+
+[node name="Orange1" type="Sprite2D" parent="HUD/Control/MoneyLabel"]
+position = Vector2(143, 23)
+scale = Vector2(0.328125, 0.328125)
+texture = ExtResource("7_21qrk")
 
 [node name="Label" type="Label" parent="HUD/Control"]
 layout_mode = 1

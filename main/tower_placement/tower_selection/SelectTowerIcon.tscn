@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://deqfopbxye3ty"]
+[gd_scene load_steps=3 format=3 uid="uid://deqfopbxye3ty"]
 
 [ext_resource type="Script" uid="uid://d330g4xqxbjrx" path="res://main/tower_placement/tower_selection/tower_to_select.gd" id="1_rqry2"]
+[ext_resource type="Texture2D" uid="uid://phj17s661ir1" path="res://main/coins/Orange_1.png" id="2_2hodx"]
 
 [node name="SelectTowerIcon" type="Control"]
 layout_mode = 3
@@ -32,5 +33,26 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="Label" type="Label" parent="Panel/Button"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -69.0
+offset_top = -27.0
+offset_right = -29.0
+offset_bottom = -4.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "COST"
+horizontal_alignment = 2
+
+[node name="Orange1" type="Sprite2D" parent="Panel/Button"]
+position = Vector2(111, 111)
+scale = Vector2(0.151367, 0.151367)
+texture = ExtResource("2_2hodx")
 
 [connection signal="button_down" from="Panel/Button" to="." method="_on_button_button_down"]

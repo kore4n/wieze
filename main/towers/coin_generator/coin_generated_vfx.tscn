@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://cx734qo1q4w80"]
+
+[ext_resource type="Texture2D" uid="uid://phj17s661ir1" path="res://main/coins/Orange_1.png" id="1_rxjoo"]
+[ext_resource type="Script" uid="uid://mxy6m1wdrqy5" path="res://main/towers/coin_generator/coin_generated_vfx.gd" id="1_ysqvt"]
+[ext_resource type="Texture2D" uid="uid://4f4tl3hr043" path="res://main/coins/Orange_2.png" id="2_ysqvt"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_l8f3m"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_rxjoo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_ysqvt")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="CoinGeneratedVfx" type="Node2D"]
+script = ExtResource("1_ysqvt")
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
+position = Vector2(28, 0)
+scale = Vector2(0.365234, 0.365234)
+sprite_frames = SubResource("SpriteFrames_l8f3m")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -34.0
+offset_top = -18.0
+offset_right = 18.0
+offset_bottom = 16.0
+theme_override_font_sizes/font_size = 24
+text = "+5"
