@@ -10,6 +10,3 @@ tower_to_spawn_prefab = ExtResource("2_i3gom")
 [node name="TextureRect" parent="Panel" index="0"]
 texture = ExtResource("3_i3gom")
 expand_mode = 1
-
-[node name="Label" parent="Panel/Button" index="0"]
-text = "20"

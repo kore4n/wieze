@@ -1,13 +1,14 @@
-[gd_scene load_steps=12 format=3 uid="uid://c4347heiw7wsh"]
+[gd_scene load_steps=13 format=3 uid="uid://c4347heiw7wsh"]
 
 [ext_resource type="PackedScene" uid="uid://by1c5st88khll" path="res://main/core/game_manager.tscn" id="1_1fyd6"]
 [ext_resource type="Script" uid="uid://clooiu0ie13el" path="res://main/core/hunger_bar.gd" id="2_0eocs"]
 [ext_resource type="PackedScene" uid="uid://buauxrayhrhsp" path="res://main/main_camera/MainCamera.tscn" id="2_xur1t"]
-[ext_resource type="Script" uid="uid://ckaj3cil1hv7k" path="res://main/ui/hud.gd" id="4_ruamb"]
+[ext_resource type="Script" path="res://main/ui/hud.gd" id="4_ruamb"]
 [ext_resource type="PackedScene" uid="uid://c7vcviakru0n7" path="res://main/tower_placement/tower_selection/PickTowerCanvasLayer.tscn" id="5_1fyd6"]
 [ext_resource type="Script" uid="uid://cdcsgpjft8rxf" path="res://main/ui/money_label.gd" id="5_oc406"]
 [ext_resource type="PackedScene" uid="uid://bkbrlivs35o5e" path="res://main/core_king/CoreKing.tscn" id="5_ruamb"]
 [ext_resource type="Texture2D" uid="uid://phj17s661ir1" path="res://main/coins/Orange_1.png" id="7_21qrk"]
+[ext_resource type="Texture2D" uid="uid://cdwl2insh7n4h" path="res://main/Picnic_background.png" id="9_puwre"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y0fej"]
 bg_color = Color(0.252028, 0.252028, 0.252028, 1)
@@ -32,6 +33,11 @@ font_size = 30
 
 [node name="MainCamera" parent="." instance=ExtResource("2_xur1t")]
 zoom = Vector2(0.5, 0.5)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -600)
+scale = Vector2(2, 2)
+texture = ExtResource("9_puwre")
 
 [node name="CoreKing" parent="." instance=ExtResource("5_ruamb")]
 
