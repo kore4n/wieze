@@ -1,8 +1,14 @@
-[gd_scene load_steps=6 format=3 uid="uid://c43w4y3q3fhh6"]
+[gd_scene load_steps=8 format=3 uid="uid://c43w4y3q3fhh6"]
 
 [ext_resource type="Script" uid="uid://cdmbhu07vde6n" path="res://main/enemies/enemy.gd" id="1_q7old"]
+[ext_resource type="AudioStream" uid="uid://brd8jel4u4kyw" path="res://main/audio/sfx/tomato-squishwet-103934.mp3" id="2_emk4m"]
 [ext_resource type="Script" uid="uid://djrmd5fqhu4fj" path="res://main/addons/primitives2d/rectangle2d.gd" id="2_x8un0"]
 [ext_resource type="PackedScene" uid="uid://gbhvilbri8c" path="res://main/components/health_component.tscn" id="3_rnj73"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_f73bx"]
+random_pitch = 1.1
+streams_count = 1
+stream_0/stream = ExtResource("2_emk4m")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q7old"]
 size = Vector2(100, 100)
@@ -16,6 +22,7 @@ gravity_scale = 0.0
 contact_monitor = true
 max_contacts_reported = 1
 script = ExtResource("1_q7old")
+hit_sound = SubResource("AudioStreamRandomizer_f73bx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_q7old")
@@ -30,3 +37,5 @@ max_health = 2.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HealthComponent"]
 shape = SubResource("RectangleShape2D_emk4m")
+
+[connection signal="hit_taken" from="HealthComponent" to="." method="_on_health_component_hit_taken"]

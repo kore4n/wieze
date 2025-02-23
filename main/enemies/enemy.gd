@@ -6,6 +6,7 @@ class_name Enemy
 @export var target_object: Node2D
 @export var speed: int = 100
 @export var damage: int = 1
+@export var hit_sound: AudioStream
 
 var hit_cooldown_timer: Timer
 var knockback_timer: Timer
@@ -48,7 +49,7 @@ func _on_death():
 func _on_tower_hit(body: Node):
 	if not hit_cooldown_timer.is_stopped():
 		return
-
+	
 	var tower = body as TowerHurtbox
 	tower.hit(damage)
 	hit_cooldown_timer.start()
@@ -57,3 +58,7 @@ func _knockback(direction: Vector2, force: float):
 	apply_impulse(direction.normalized() * force)
 	stunned = true
 	knockback_timer.start()
+
+
+func _on_health_component_hit_taken(damage):
+	AudioManager.play_sound(hit_sound, global_position)
