@@ -50,7 +50,7 @@ texture = ExtResource("1_uo84y")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_m2x10")
-frame_progress = 0.0917146
+frame_progress = 0.313011
 
 [node name="TaxTimer" type="Timer" parent="."]
 

@@ -2,6 +2,7 @@ extends RigidBody2D
 class_name Enemy
 
 @onready var health_component: HealthComponent = $HealthComponent
+@onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 
 @export var target_object: Node2D
 @export var speed: int = 100
@@ -13,6 +14,7 @@ var knockback_timer: Timer
 var stunned: bool = false
 
 func _ready():
+	animated_sprite.play()
 	knockback_timer = Timer.new()
 	knockback_timer.autostart = false
 	knockback_timer.wait_time = 0.1
@@ -31,6 +33,9 @@ func _ready():
 	add_child(hit_cooldown_timer)
 	health_component.death.connect(_on_death)
 	health_component.knockback_force.connect(_knockback)
+
+func _process(_delta: float) -> void:
+	animated_sprite.flip_h = global_position.x < 0
 
 func _physics_process(delta):
 	if stunned: return

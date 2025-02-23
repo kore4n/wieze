@@ -1,14 +1,29 @@
-[gd_scene load_steps=8 format=3 uid="uid://c43w4y3q3fhh6"]
+[gd_scene load_steps=10 format=3 uid="uid://c43w4y3q3fhh6"]
 
 [ext_resource type="Script" uid="uid://cdmbhu07vde6n" path="res://main/enemies/enemy.gd" id="1_q7old"]
 [ext_resource type="AudioStream" uid="uid://brd8jel4u4kyw" path="res://main/audio/sfx/tomato-squishwet-103934.mp3" id="2_emk4m"]
-[ext_resource type="Script" uid="uid://djrmd5fqhu4fj" path="res://main/addons/primitives2d/rectangle2d.gd" id="2_x8un0"]
+[ext_resource type="Texture2D" uid="uid://kytf06wtq060" path="res://main/enemies/Pizza_1.png" id="3_j528p"]
 [ext_resource type="PackedScene" uid="uid://gbhvilbri8c" path="res://main/components/health_component.tscn" id="3_rnj73"]
+[ext_resource type="Texture2D" uid="uid://cfr7npmb3vbyw" path="res://main/enemies/Pizza_2.png" id="4_8wjle"]
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_f73bx"]
 random_pitch = 1.1
 streams_count = 1
 stream_0/stream = ExtResource("2_emk4m")
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lhgsl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_j528p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_8wjle")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q7old"]
 size = Vector2(100, 100)
@@ -24,13 +39,12 @@ max_contacts_reported = 1
 script = ExtResource("1_q7old")
 hit_sound = SubResource("AudioStreamRandomizer_f73bx")
 
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_lhgsl")
+frame_progress = 0.682101
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_q7old")
-
-[node name="Node2D" type="Node2D" parent="."]
-script = ExtResource("2_x8un0")
-size = Vector2(100, 100)
-centered = true
 
 [node name="HealthComponent" parent="." instance=ExtResource("3_rnj73")]
 max_health = 2.0
