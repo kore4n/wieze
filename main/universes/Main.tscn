@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://c4347heiw7wsh"]
+[gd_scene load_steps=11 format=3 uid="uid://c4347heiw7wsh"]
 
 [ext_resource type="PackedScene" uid="uid://by1c5st88khll" path="res://main/core/game_manager.tscn" id="1_1fyd6"]
 [ext_resource type="Script" uid="uid://clooiu0ie13el" path="res://main/core/hunger_bar.gd" id="2_0eocs"]
 [ext_resource type="PackedScene" uid="uid://buauxrayhrhsp" path="res://main/main_camera/MainCamera.tscn" id="2_xur1t"]
+[ext_resource type="Script" uid="uid://ckaj3cil1hv7k" path="res://main/ui/hud.gd" id="4_ruamb"]
 [ext_resource type="PackedScene" uid="uid://c7vcviakru0n7" path="res://main/tower_placement/tower_selection/PickTowerCanvasLayer.tscn" id="5_1fyd6"]
 [ext_resource type="Script" uid="uid://cdcsgpjft8rxf" path="res://main/ui/money_label.gd" id="5_oc406"]
 [ext_resource type="PackedScene" uid="uid://bkbrlivs35o5e" path="res://main/core_king/CoreKing.tscn" id="5_ruamb"]
@@ -39,6 +40,7 @@ spawn_radius = 3000.0
 starting_money = 80
 
 [node name="HUD" type="CanvasLayer" parent="."]
+script = ExtResource("4_ruamb")
 
 [node name="Control" type="Control" parent="HUD"]
 layout_mode = 3
@@ -75,5 +77,41 @@ text = "Money"
 label_settings = SubResource("LabelSettings_ruamb")
 horizontal_alignment = 2
 script = ExtResource("5_oc406")
+
+[node name="Label" type="Label" parent="HUD/Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -256.0
+offset_top = -254.0
+offset_right = 256.0
+offset_bottom = -203.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.964706, 0.305882, 0, 1)
+theme_override_font_sizes/font_size = 24
+text = "King Cammy's hunger is taxing your income!"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="HUD/Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -307.5
+offset_top = -203.0
+offset_right = 307.5
+offset_bottom = -152.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.985514, 0, 0.318806, 1)
+theme_override_font_sizes/font_size = 24
+text = "King Cammy is starved! He is willing to eat anything..."
+horizontal_alignment = 1
 
 [node name="PickTowerCanvasLayer" parent="." instance=ExtResource("5_1fyd6")]
